@@ -1,17 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_accounts/Models/AccountInfo.dart';
+import 'package:my_accounts/Models/CardInfo.dart';
 import 'package:my_accounts/Settings/AppConstants.dart';
 
-class AccountInfoWidget extends StatefulWidget {
-  final AccountInfo accountInfo;
+class CardWidget extends StatefulWidget {
+  final CardInfo cardData;
+  final Color cardColor;
+  CardWidget({this.cardData, this.cardColor});
 
-  AccountInfoWidget({this.accountInfo});
-
-  _AccountInfoWidgetState createState() => _AccountInfoWidgetState();
+  _CardWidgetState createState() => _CardWidgetState();
 }
 
-class _AccountInfoWidgetState extends State<AccountInfoWidget> {
+class _CardWidgetState extends State<CardWidget> {
+  double imageSize;
 
   AppConstants constants = AppConstants();
   @override
@@ -22,7 +23,7 @@ class _AccountInfoWidgetState extends State<AccountInfoWidget> {
         width: constants.screenWidth,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(8)),
-          color: Colors.white,
+          color: widget.cardColor,
           boxShadow: [
             BoxShadow(
               color: const Color(0x29000000),
@@ -31,28 +32,64 @@ class _AccountInfoWidgetState extends State<AccountInfoWidget> {
             ),
           ],
         ),
-        padding: EdgeInsets.fromLTRB(constants.edgeDistance, constants.topGap, constants.edgeDistance, constants.topGap),
+        padding: EdgeInsets.fromLTRB(constants.edgeDistance*.5, constants.topGap*.5, constants.edgeDistance*.5, constants.topGap),
         child: Column(
           children: [
             Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              width: constants.screenWidth,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
+                  Container(
+                    child: Text(
+                      "Current Account",
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontFamily: AppConstants.fontTitillium,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
                   Text(
-                    widget.accountInfo.card.cardNumber,
+                    widget.cardData.cardNumber,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: AppConstants.appDarkGreenColor,
-                      fontSize: 16,
+                      color: Colors.white,
+                      fontSize: 20,
                       fontFamily: AppConstants.fontTitillium,
                       fontWeight: FontWeight.w800,
                     ),
                   ),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: constants.fieldGap*4),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, constants.topGap * 0.5, 0, 0),
+                    child: Text(
+                      "Balance",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontFamily: AppConstants.fontTitillium,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+
+                  ),
+
                   Text(
-                    "Card Valid Through",
+                    "Valid Through",
                     style: TextStyle(
-                      color: AppConstants.appDarkGreenColor,
-                      fontSize: 14,
+                      color: Colors.white,
+                      fontSize: 16,
                       fontFamily: AppConstants.fontTitillium,
                       fontWeight: FontWeight.w300,
                     ),
@@ -65,52 +102,21 @@ class _AccountInfoWidgetState extends State<AccountInfoWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    padding: EdgeInsets.fromLTRB(0, constants.topGap * 0.5, 0, 0),
-                    child: Text(
-                      widget.accountInfo.address,
-                      style: TextStyle(
-                        color: AppConstants.appDarkGreenColor,
-                        fontSize: 14,
-                        fontFamily: AppConstants.fontTitillium,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    child: Text(
-                      widget.accountInfo.card.validityDate,
-                      style: TextStyle(
-                        color: AppConstants.appDarkGreenColor,
-                        fontSize: 14,
-                        fontFamily: AppConstants.fontTitillium,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.fromLTRB(0, constants.topGap, 0, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
                     child: Row(
                       children: [
                         Text(
-                          widget.accountInfo.card.balance,
+                          widget.cardData.balance,
                           style: TextStyle(
-                            color: AppConstants.appGreenColor,
+                            color: Colors.white,
                             fontSize: 20,
                             fontFamily: AppConstants.fontTitillium,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
                         Text(
-                          widget.accountInfo.card.currency,
+                          widget.cardData.currency,
                           style: TextStyle(
-                            color: AppConstants.appGreenColor,
+                            color: Colors.white,
                             fontSize: 12,
                             fontFamily: AppConstants.fontTitillium,
                             fontWeight: FontWeight.w700,
@@ -119,15 +125,14 @@ class _AccountInfoWidgetState extends State<AccountInfoWidget> {
                       ],
                     ),
                   ),
-                  Flexible(
+                  Container(
                     child: Text(
-                      widget.accountInfo.accountType,
-                      textAlign: TextAlign.end,
+                      widget.cardData.validityDate,
                       style: TextStyle(
-                        color: AppConstants.appGreenColor,
+                        color: Colors.white,
                         fontSize: 14,
                         fontFamily: AppConstants.fontTitillium,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w800,
                       ),
                     ),
                   ),

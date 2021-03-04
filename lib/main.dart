@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_accounts/Screens/HomePage.dart';
+import 'package:my_accounts/Screens/HomeView.dart';
 import 'package:my_accounts/Settings/Routes.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: HomeView(),
     );
   }
 }

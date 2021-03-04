@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:my_accounts/Screens/HomePage.dart';
+import 'package:my_accounts/Screens/HomeView.dart';
 
 enum Screen {
   HOME_VIEW,
@@ -30,7 +30,7 @@ class ScreenManager {
     switch (screen) {
       case Screen.HOME_VIEW:
         {
-          screenToGo = HomePage();
+          screenToGo = HomeView();
         }
         break;
     }

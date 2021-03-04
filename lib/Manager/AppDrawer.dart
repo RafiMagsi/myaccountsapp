@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_accounts/Screens/HomePage.dart';
+import 'package:my_accounts/Screens/HomeView.dart';
 import 'package:my_accounts/Settings/AppConstants.dart';
 import 'package:my_accounts/Settings/ScreenManager.dart';
 
@@ -13,7 +13,7 @@ class AppDrawer extends StatelessWidget {
           _createHeader(),
           Divider(),
           _createDrawerItem(
-              icon: Icons.home, text: 'Home', onTap: () => ScreenManager.gotoScreenByRouteName(context, HomePage.routeName, data: null)),
+              icon: Icons.home, text: 'Home', onTap: () => ScreenManager.gotoScreenByRouteName(context, HomeView.routeName, data: null)),
           Divider(),
         ],
       ),

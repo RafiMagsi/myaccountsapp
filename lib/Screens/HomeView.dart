@@ -3,16 +3,16 @@ import 'package:my_accounts/Manager/AppDrawer.dart';
 import 'package:my_accounts/Manager/TabBarManager.dart';
 import 'package:my_accounts/Settings/AppConstants.dart';
 
-class HomePage extends StatefulWidget {
+class HomeView extends StatefulWidget {
   static const routeName = '/home';
 
-  HomePage({Key key}) : super(key: key);
+  HomeView({Key key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeViewState createState() => _HomeViewState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin{
+class _HomeViewState extends State<HomeView> with SingleTickerProviderStateMixin{
 
   TabController _controller;
   AppConstants constants = AppConstants();
