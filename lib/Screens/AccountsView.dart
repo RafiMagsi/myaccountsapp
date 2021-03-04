@@ -24,8 +24,10 @@ class _AccountsViewState extends State<AccountsView> {
 
   @override
   Widget build(BuildContext context) {
+    // Sample credit card object created
     CardInfo cardInfo1 =
     CardInfo(cardNumber: "1234 **** **** 4563", accountType: "Current Account", validityDate: "06/23", balance: "130,000,00", currency: "IQD");
+    // Sample account info object created and card object passed in it
     AccountInfo accountInfo = AccountInfo(card: cardInfo1, address: "Al Nahda Branch - Dubai UAE", accountType: "Saving Account", currency: "IQD");
 
     return Scaffold(
@@ -61,6 +63,7 @@ class _AccountsViewState extends State<AccountsView> {
                 ],
               ),
             ),
+            // Custom widget to show action rows in accounts view
             ActionRowWidget(
               icon: Icons.account_balance_wallet_rounded,
               actionText: "Cash Transfer",

@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:my_accounts/Models/CardInfo.dart';
 import 'package:my_accounts/Settings/AppConstants.dart';
 
+// CardWidget is a dynamic widget, it requires a CardInfo model object
 class CardWidget extends StatefulWidget {
+  // Takes the CardInfo model object
   final CardInfo cardData;
+  // Takes the color object for card color
   final Color cardColor;
+  // Named parameters
   CardWidget({this.cardData, this.cardColor});
 
   _CardWidgetState createState() => _CardWidgetState();

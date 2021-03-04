@@ -6,6 +6,7 @@ import 'package:my_accounts/Screens/AccountsView.dart';
 import 'package:my_accounts/Screens/CardsView.dart';
 import 'package:my_accounts/Settings/AppConstants.dart';
 
+// This tab bar is in screen tab bar to show different views as tabs
 class TabBarManager extends StatelessWidget {
   final TabController _controller;
 
@@ -25,7 +26,7 @@ class TabBarManager extends StatelessWidget {
             labelColor: AppConstants.appLightGreenColor,
             unselectedLabelColor: AppConstants.appDarkGreenColor,
             controller: _controller,
-            tabs: [
+            tabs: [ // Names of the tabs
               new Tab(
                 child: Text(AppConstants.sAccounts, style: TextStyle( fontWeight: FontWeight.w800, fontSize: 16),),
               ),
@@ -39,7 +40,7 @@ class TabBarManager extends StatelessWidget {
           height: AppConstants.shared.screenHeight,
           child: new TabBarView(
             controller: _controller,
-            children: <Widget>[
+            children: <Widget>[ // Views of the tabs
               AccountsView(),
               CardsView(),
             ],

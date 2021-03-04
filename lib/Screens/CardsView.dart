@@ -21,6 +21,7 @@ class _CardsViewState extends State<CardsView> {
 
   @override
   Widget build(BuildContext context) {
+    // Two sample credit cards created
     CardInfo cardInfo1 =
         CardInfo(cardNumber: "1234 **** **** 4563", accountType: "Current Account", validityDate: "06/23", balance: "130,000,00", currency: "IQD");
     CardInfo cardInfo2 =
@@ -29,7 +30,7 @@ class _CardsViewState extends State<CardsView> {
       body: Container(
         color: Colors.transparent,
         child: Column(
-          children: [
+          children: [ // Card Widget takes CardInfo and creates a dynamic card widget
             CardWidget(
               cardData: cardInfo1,
               cardColor: AppConstants.appCardGreenColor,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:my_accounts/Settings/AppConstants.dart';
 
+// Basic theme sample to use for application
 ThemeData themeData = ThemeData(
   primaryColor: AppConstants.appBgColor,
   primaryColorDark: AppConstants.appBorderGreyColor,

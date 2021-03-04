@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:my_accounts/Models/AccountInfo.dart';
 import 'package:my_accounts/Settings/AppConstants.dart';
 
+// Shows the account info for Account tab in home view
 class AccountInfoWidget extends StatefulWidget {
+
+  // AccountInfo object should be passed to show the widget dynamically
   final AccountInfo accountInfo;
 
+  // accountInfo as a names parameter
   AccountInfoWidget({this.accountInfo});
 
   _AccountInfoWidgetState createState() => _AccountInfoWidgetState();

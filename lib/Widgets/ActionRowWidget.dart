@@ -2,8 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_accounts/Settings/AppConstants.dart';
 
+// Action row widget makes a dynamic row for user actions or events to perform on his account
 class ActionRowWidget extends StatefulWidget {
+  // It takes an icon
   final IconData icon;
+  // It takes a text to show on the action
   final String actionText;
   ActionRowWidget({this.icon, this.actionText});
 

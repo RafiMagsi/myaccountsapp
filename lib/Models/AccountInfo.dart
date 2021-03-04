@@ -1,5 +1,6 @@
 import 'package:my_accounts/Models/CardInfo.dart';
 
+// Model for user account information
 class AccountInfo {
   AccountInfo({
     this.id,
@@ -10,7 +11,7 @@ class AccountInfo {
   });
 
   int id;
-  CardInfo card;          // Card instance for the account
+  CardInfo card;      // Card instance for the account
   String address;     // Al Nahda Branch - Dubai, UAE
   String accountType; // Saving Account
   String currency;    //IQD

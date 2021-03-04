@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// This static class manages all the app constants
 class AppConstants {
-  // singleton
+  // creating singleton
   static final AppConstants _singleton = AppConstants._internal();
 
   factory AppConstants() => _singleton;
@@ -16,18 +17,15 @@ class AppConstants {
   double screenWidth;
   double fieldGap;
   double topGap;
-  double fieldHeight52;
-  double fieldHeight45;
   double edgeDistance;
 
+  // Initializing the settings depending on the app context and device resolution
   void setAppSettings(BuildContext context) {
-    this.screenHeight = MediaQuery.of(context).size.height;
-    this.screenWidth = MediaQuery.of(context).size.width;
-    this.fieldGap = screenHeight * 0.0225;
-    this.topGap = screenHeight * 0.02;
-    this.edgeDistance = edgeDistance = screenWidth * 0.08;
-    this.fieldHeight52 = 52;
-    this.fieldHeight45 = 45;
+    this.screenHeight = MediaQuery.of(context).size.height;     // Screen height
+    this.screenWidth = MediaQuery.of(context).size.width;       // Screen width
+    this.fieldGap = screenHeight * 0.0225;                      // Custom field gap to be used in forms
+    this.topGap = screenHeight * 0.02;                          // Constant to set top padding or margin of a widget
+    this.edgeDistance = edgeDistance = screenWidth * 0.08;      // Constant to space from edges of the widget
   }
 
   // Color constants

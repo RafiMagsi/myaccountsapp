@@ -21,7 +21,7 @@ flutter:
   uses-material-design: true
 
   fonts:
-    - family: Titillium
+    - family: Titillium #Related font to the given design
       fonts:
         - asset: assets/fonts/Titillium/titilliumweb-bold.ttf
         - asset: assets/fonts/Titillium/titilliumweb-extralight.ttf

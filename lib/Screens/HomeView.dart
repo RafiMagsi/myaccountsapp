@@ -12,22 +12,27 @@ class HomeView extends StatefulWidget {
   _HomeViewState createState() => _HomeViewState();
 }
 
+// SingleTickerProviderStateMixin is used to help TabManager, it active state of the view
 class _HomeViewState extends State<HomeView> with SingleTickerProviderStateMixin{
 
+  // TabController is required to manage different tabs
   TabController _controller;
   AppConstants constants = AppConstants();
 
   @override
   void initState() {
+    // Passing this class in vsync as delegate of TabController
     _controller = new TabController(length: 2, vsync: this);
     super.initState();
   }
   @override
   Widget build(BuildContext context) {
+
+    // Initializing the main settings of the application
     constants.setAppSettings(context);
 
     return Scaffold(
-      drawer: AppDrawer(),
+      drawer: AppDrawer(), // To show side menu
       appBar: AppBar(
         iconTheme: IconThemeData(color: AppConstants.appDarkGreenColor),
         centerTitle: false,

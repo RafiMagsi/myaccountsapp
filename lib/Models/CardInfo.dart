@@ -1,3 +1,5 @@
+
+// Model for Credit/Debit card information
 class CardInfo {
   CardInfo({
     this.id,
